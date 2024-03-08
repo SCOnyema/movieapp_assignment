@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+/*
+* flutter run --dart-define=TMDB_API_KEY=_Here_is_your_key_
+*
+* const TMDB_API_KEY = String.fromEnvironment('TMDB_API_KEY', defaultValue: null)
+* */
+
+
+
 void main() {
   runApp(const MyApp());
 }
