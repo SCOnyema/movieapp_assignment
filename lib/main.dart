@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-
-/*
-* flutter run --dart-define=TMDB_API_KEY=_Here_is_your_key_
-*
-* const TMDB_API_KEY = String.fromEnvironment('TMDB_API_KEY', defaultValue: null)
-* */
-
+import 'app.dart';
+import 'search_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,12 +12,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      title: 'Pure Flix',
+      theme: ThemeData.dark().copyWith(
+        // Override the dark theme's scaffold background color with black
+        scaffoldBackgroundColor: Colors.black,
+        // Merge the existing dark text theme with your changes
+        textTheme: ThemeData.dark().textTheme.apply(
+          bodyColor: Colors.white, // Sets the default text color to white
+          displayColor: Colors.white, // Sets the display text color to white
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(
+        title: 'Flutter Demo Home Page',
+      ),
     );
   }
 }
@@ -37,28 +39,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
       body: Center(
-
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Start Flixing',
+            SizedBox(height: 50), // Adjust as needed
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.purple, // Button background color
+                onPrimary: Colors.white, // Text color
+              ),
+              onPressed: () {
+                // Navigate to the HomePage when the button is pressed
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => App()),
+                );
+              },
+              child: Text('Start Flixing'),
             ),
           ],
         ),
       ),
-   // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
