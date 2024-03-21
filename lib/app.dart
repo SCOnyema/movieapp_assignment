@@ -32,10 +32,9 @@ class _MainAppWrapperState extends State<MainAppWrapper> {
 
   // Add your other page classes here
   final List<Widget> _pageOptions = [
-    HomePage(), // Make sure this is a widget for the content of your home screen
+    HomePage(), // Widget for the content of home screen
     CollectionPage(), // Collection page widget
     SearchPage(), // Search page widget
-    // Uncomment this when you have a profile_page.dart
     ProfilePage(), // Profile page widget
   ];
 
