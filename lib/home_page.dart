@@ -18,7 +18,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     tmdbWithCustomLogs = TMDB(
-      ApiKeys('7b9f27a2dc328bb6cb5177678ae8c959', 'your-read-access-token'),
+      ApiKeys('7b9f27a2dc328bb6cb5177678ae8c959',
+          'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjlmMjdhMmRjMzI4YmI2Y2I1MTc3Njc4YWU4Yzk1OSIsInN1YiI6IjY1YzIwOTNiOGU4ZDMwMDE2Mjc3ZWZkNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WlkvgjwIWu2Dbsxv5offtd7l1B00kdoAYqCvwH56k9o'),
     );
     // Directly assign the futures here
     nowPlayingMovies = fetchNowPlayingMovies();

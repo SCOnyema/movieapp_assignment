@@ -71,8 +71,8 @@ class _MainAppWrapperState extends State<MainAppWrapper> {
             label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.bookmark_outlined),
+            label: 'Favorite',
           ),
         ],
         currentIndex: _selectedIndex,
