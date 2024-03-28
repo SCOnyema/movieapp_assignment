@@ -78,6 +78,7 @@ class _SearchPageState extends State<SearchPage> {
                 ),
                 prefixIcon: const Icon(Icons.search),
               ),
+              style: TextStyle(color: Colors.black),
               onSubmitted: (query) {
                 setState(() {
                   searchResults = fetchSearchResults(query);
