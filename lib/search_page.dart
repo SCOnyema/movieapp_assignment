@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_api/tmdb_api.dart';
+import 'moviedetail_page.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -122,7 +123,17 @@ Widget buildSection(BuildContext context, String title, Future<List<dynamic>> fu
                 itemCount: snapshot.data!.length,
                 itemBuilder: (BuildContext context, int index) {
                   final movie = snapshot.data![index];
-                  return Container(
+                  return GestureDetector(
+                      onTap: () {
+                    // Navigate to the MovieDetailPage on tap
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MovieDetailPage(movie: movie),
+                      ),
+                    );
+                  },
+                  child: Container(
                     width: 130,
                     margin: const EdgeInsets.all(4.0),
                     child: Column(
@@ -144,7 +155,7 @@ Widget buildSection(BuildContext context, String title, Future<List<dynamic>> fu
                         ),
                         // Text for movie release date
                         Text(
-                          movie['release_date'] ?? 'No Release Date',
+                          movie['release_date'] != null ? movie['release_date'].split('-')[0] : 'N/A',
                           style: const TextStyle(
                             color: Colors.grey,
                             fontSize: 12,
@@ -154,6 +165,7 @@ Widget buildSection(BuildContext context, String title, Future<List<dynamic>> fu
                         ),
                       ],
                     ),
+                  )
                   );
                 },
               ),

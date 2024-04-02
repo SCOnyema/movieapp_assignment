@@ -118,8 +118,13 @@ class _HomePageState extends State<HomePage> {
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                   Text(
-                                    movie['release_date'] ?? 'No Release Date',
-                                    style: const TextStyle(color: Colors.grey, fontSize: 12),
+                                    movie['release_date'] != null ? movie['release_date'].split('-')[0] : 'N/A',
+                                    style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 12,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ],
                               ),

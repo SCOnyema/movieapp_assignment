@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'tvshowdetail_page.dart';
 
 class CollectionPage extends StatefulWidget {
   const CollectionPage({Key? key}) : super(key: key);
@@ -19,8 +20,12 @@ class _CollectionPageState extends State<CollectionPage> {
 
     var genres = {
       'Action & Adventure': 10759,
+      'Reality': 10764,
       'Animation': 16,
       'Comedy': 35,
+      'Kids': 10762,
+      'Documentary': 99,
+      'Sci-Fi & Fantansy': 10765,
       // You can add more genres here...
     };
 
@@ -81,30 +86,41 @@ class _CollectionPageState extends State<CollectionPage> {
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {
                     final tvShow = snapshot.data![index];
-                    return Container(
-                      width: 130,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.network(
-                                'https://image.tmdb.org/t/p/w500${tvShow['poster_path']}',
-                                fit: BoxFit.cover,
+
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TVShowDetailPage(tvShow: tvShow),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: 130,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://image.tmdb.org/t/p/w500${tvShow['poster_path']}',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              tvShow['name'] ?? 'No Title',
-                              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                tvShow['name'] ?? 'No Title',
+                                style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -117,5 +133,4 @@ class _CollectionPageState extends State<CollectionPage> {
         ),
       ],
     );
-  }
-}
+  }}

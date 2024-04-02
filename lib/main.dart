@@ -46,6 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            //logo
+            Image.asset(
+              'assets/PUREFLIX.png',
+              width: 100,
+              height: 100,
+            ),
             SizedBox(height: 50), // Adjust as needed
             ElevatedButton(
               style: ElevatedButton.styleFrom(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movieapp_assignment/collection_page.dart';
 import 'package:movieapp_assignment/home_page.dart';
 import 'package:movieapp_assignment/search_page.dart';
-import 'package:movieapp_assignment/profile_page.dart';
+import 'package:movieapp_assignment/favorite_page.dart';
 import 'package:movieapp_assignment/moviedetail_page.dart';
 
 
@@ -36,7 +36,7 @@ class _MainAppWrapperState extends State<MainAppWrapper> {
     HomePage(), // Widget for the content of home screen
     CollectionPage(), // Collection page widget
     SearchPage(), // Search page widget
-    ProfilePage(), // Profile page widget
+    FavoritePage(), // Profile page widget
     MovieDetailPage(movie: null,),
   ];
 
