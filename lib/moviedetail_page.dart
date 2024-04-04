@@ -15,7 +15,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
   void toggleFavorite() {
     setState(() {
       isFavorite = !isFavorite;
-      // Here, you can add logic to save the favorite status in your database or state management solution
+      // Logic to be attended to
     });
   }
 

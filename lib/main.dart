@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'app.dart';
-import 'search_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -14,9 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Pure Flix',
       theme: ThemeData.dark().copyWith(
-        // Override the dark theme's scaffold background color with black
+        // Override the dark theme scaffold background color with black
         scaffoldBackgroundColor: Colors.black,
-        // Merge the existing dark text theme with your changes
+        // Merge the existing dark text theme
         textTheme: ThemeData.dark().textTheme.apply(
           bodyColor: Colors.white, // Sets the default text color to white
           displayColor: Colors.white, // Sets the display text color to white

@@ -5,7 +5,6 @@ import 'package:movieapp_assignment/search_page.dart';
 import 'package:movieapp_assignment/favorite_page.dart';
 import 'package:movieapp_assignment/moviedetail_page.dart';
 
-
 class App extends StatelessWidget {
   App({Key? key}) : super(key: key);
 
@@ -16,7 +15,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark, // Using dark theme
       ),
-      home: MainAppWrapper(), // This is the entry point to your app
+      home: MainAppWrapper(), // This is the entry point of the app
     );
   }
 }
@@ -31,12 +30,12 @@ class MainAppWrapper extends StatefulWidget {
 class _MainAppWrapperState extends State<MainAppWrapper> {
   int _selectedIndex = 0;
 
-  // Add your other page classes here
+  // all page classes
   final List<Widget> _pageOptions = [
     HomePage(), // Widget for the content of home screen
     CollectionPage(), // Collection page widget
     SearchPage(), // Search page widget
-    FavoritePage(), // Profile page widget
+    FavoritePage(), // Favorite page widget
     MovieDetailPage(movie: null,),
   ];
 

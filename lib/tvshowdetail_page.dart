@@ -15,9 +15,11 @@ class _TVShowDetailPageState extends State<TVShowDetailPage> {
   void toggleFavorite() {
     setState(() {
       isFavorite = !isFavorite;
-      // Here, you can add logic to save the favorite status in your database or state management solution
+
     });
   }
+
+
 
   @override
   Widget build(BuildContext context) {

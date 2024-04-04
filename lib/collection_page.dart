@@ -26,7 +26,7 @@ class _CollectionPageState extends State<CollectionPage> {
       'Kids': 10762,
       'Documentary': 99,
       'Sci-Fi & Fantansy': 10765,
-      // You can add more genres here...
+      'Mystery': 9648,
     };
 
     genres.forEach((genreName, genreId) {

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "894989684040",
+    "firebase_url": "https://pureflix-assignment-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "pureflix-assignment",
+    "storage_bucket": "pureflix-assignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894989684040:android:541c31305de933a890f77d",
+        "android_client_info": {
+          "package_name": "uk.ac.sconyema.movieapp_assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkeuJP62xHT_uoXEqTr_GH7AweaKw46EQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
