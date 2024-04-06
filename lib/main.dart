@@ -57,8 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(height: 50), // Adjust as needed
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.purple, // Button background color
-                onPrimary: Colors.white, // Text color
+                foregroundColor: Colors.white, backgroundColor: Colors.purple, // Text color
               ),
               onPressed: () {
                 // Navigate to the HomePage when the button is pressed

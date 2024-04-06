@@ -3,16 +3,17 @@ import 'package:firebase_database/firebase_database.dart';
 import 'moviedetail_page.dart';
 import 'tvshowdetail_page.dart';
 
+// Displays the favorite movie or tvshow details
 class FavoritePage extends StatefulWidget {
-  const FavoritePage({Key? key}) : super(key: key);
+  const FavoritePage({Key? key}) : super(key: key); //
 
   @override
   State<FavoritePage> createState() => _FavoritePageState();
 }
 
 class _FavoritePageState extends State<FavoritePage> {
-  late DatabaseReference _moviesRef;
-  late DatabaseReference _tvShowsRef;
+  late DatabaseReference _moviesRef; // reference to the movies in realtime database
+  late DatabaseReference _tvShowsRef; // reference to the tvshows in realtime database
 
   @override
   void initState() {

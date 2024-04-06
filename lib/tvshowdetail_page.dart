@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
+// Displays the details of TV show
 class TVShowDetailPage extends StatefulWidget {
   final dynamic tvShow;
 
+  // Constructor requires a dynamic object representing TV show details
   const TVShowDetailPage({Key? key, required this.tvShow}) : super(key: key);
 
   @override
@@ -11,18 +14,28 @@ class TVShowDetailPage extends StatefulWidget {
 
 class _TVShowDetailPageState extends State<TVShowDetailPage> {
   bool isFavorite = false; // Initial favorite status
+  late DatabaseReference favoritesRef;
+
+  @override
+  void initState() {
+    super.initState();
+    favoritesRef = FirebaseDatabase.instance.ref('favorites/tvShows');
+  }
 
   void toggleFavorite() {
     setState(() {
       isFavorite = !isFavorite;
-
     });
+    if (isFavorite){
+      //wasn't able to complete it
+
+
+    }
   }
-
-
 
   @override
   Widget build(BuildContext context) {
+    // UI struture of the TV show detail
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.tvShow['name'] ?? 'TV Show Details'),

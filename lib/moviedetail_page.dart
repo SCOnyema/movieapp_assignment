@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
+// Displays the details of a movie
 class MovieDetailPage extends StatefulWidget {
   final dynamic movie;
 
+  // constructor requires a dynamic object representing the movie details
   const MovieDetailPage({Key? key, required this.movie}) : super(key: key);
 
   @override
@@ -11,6 +14,13 @@ class MovieDetailPage extends StatefulWidget {
 
 class _MovieDetailPageState extends State<MovieDetailPage> {
   bool isFavorite = false; // Initial favorite status
+  late DatabaseReference favoritesRef;
+
+  @override
+  void initState() {
+    super.initState();
+    favoritesRef = FirebaseDatabase.instance.ref('favorites/movies');
+  }
 
   void toggleFavorite() {
     setState(() {
@@ -21,6 +31,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
 
   @override
   Widget build(BuildContext context) {
+    // UI structure of the movie detail
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.movie['title'] ?? 'Movie Details'),
